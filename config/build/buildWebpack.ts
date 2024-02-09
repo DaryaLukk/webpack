@@ -6,7 +6,7 @@ import { buildResolvers } from './buildResolvers';
 import { BuildOptions } from './types/types';
 
 export function buildWebpack(options: BuildOptions): webpack.Configuration {
-  const {paths, mode} = options;
+  const { paths, mode } = options;
   const isDev = options.mode === 'development';
 
   return {
@@ -18,7 +18,7 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
     output: {
       path: paths.output,
       filename: '[name].[contenthash].js', // шаблоны для корректного кэш-я в браузере
-      clean: true // очищает предыдущие бандлы
+      clean: true, // очищает предыдущие бандлы
     },
     plugins: buildPlugins(options),
     module: {
@@ -27,5 +27,5 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
     resolve: buildResolvers(),
     devtool: isDev ? 'inline-source-map' : false, // отслеживать ошибки
     devServer: isDev ? buildDevServer(options) : undefined,
-  }
+  };
 }

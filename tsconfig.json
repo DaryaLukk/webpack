@@ -8,7 +8,11 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // позволяет работать с пакетами, к-е используют common js
-    "esModuleInterop": true // если библиотека не имеет дефолтного импорта, позволяет не писать import * as
+    "esModuleInterop": true, // если библиотека не имеет дефолтного импорта, позволяет не писать import * as
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

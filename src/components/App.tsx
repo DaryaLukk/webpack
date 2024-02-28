@@ -12,8 +12,12 @@ export type Todo = {
 export function App() {
   return (
     <div>
+      <h1>
+        PLATFORM=
+        {__PLATFORM__}
+      </h1>
       <div>
-        <img src={png} alt="" />
+        <img src={png} alt="" width={300} height={300} />
       </div>
       <Svg width={100} height={100} fill="yellow" />
       {/* По идее должен работаь :( */}

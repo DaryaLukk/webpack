@@ -50,11 +50,27 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     ],
   };
 
+  // const tsLoader = {
+  //   // Ts-loader умеет работать с JSX
+  //   // если бы мы не работали с ts -- нужен был бы babel-loader
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
+
+  // ускоряется сборка - отключаем проверку типов во время сборки
   const tsLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
     exclude: /node_modules/,
-  };
+    use: [
+      {
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: isDev
+      }
+    }
+  ]
+  }
 
   return [
     assetLoader,

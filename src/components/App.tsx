@@ -20,7 +20,9 @@ export function App() {
         <img src={png} alt="" width={300} height={300} />
       </div>
       <Svg width={100} height={100} fill="yellow" />
-      {/* По идее должен работаь :( */}
+      <Svg width={100} height={100} fill="blue" />
+      {/* По идее должен работать :( 
+          upd: скорее всего из за svg -- не задан напрямую fill stroke*/}
       {/* <Svg width={100} height={100} color="blue" /> */}
       <div>Мой сайтик</div>
       <Link to="/about">about</Link>

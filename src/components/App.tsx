@@ -20,7 +20,7 @@ export function App() {
         <img src={png} alt="" width={300} height={300} />
       </div>
       <Svg width={100} height={100} fill="yellow" />
-      <Svg width={100} height={100} fill="blue" />
+      <Svg width={100} height={100} fill="orange" />
       {/* По идее должен работать :( 
           upd: скорее всего из за svg -- не задан напрямую fill stroke*/}
       {/* <Svg width={100} height={100} color="blue" /> */}

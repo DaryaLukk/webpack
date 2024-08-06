@@ -4,6 +4,7 @@ import { Configuration, DefinePlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/types';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import ReactRefreshTypeScript from '@pmmmwh/react-refresh-webpack-plugin';
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
   const {
@@ -33,7 +34,12 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     plugins.push(
       // выносит проверку типов в отдельный процесс, не нагружая сборку
       new ForkTsCheckerWebpackPlugin(),
-  )}
+    );
+    plugins.push(
+      // позволяет подгружать изменения без перезагрузки -- Hot module replacement (hmr)
+      new ReactRefreshTypeScript()
+    );
+  }
 
   if (analyzer) {
     plugins.push(new BundleAnalyzerPlugin());

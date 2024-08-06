@@ -15,6 +15,8 @@ export default (env: EnvVariables) => {
     output: path.resolve(__dirname, 'build'),
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    // для favicon, json файлов напр-р для перевода
+    public: path.resolve(__dirname, 'public'),
     src: path.resolve(__dirname, 'src'),
   };
 

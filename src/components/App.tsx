@@ -12,7 +12,7 @@ export type Todo = {
 export function App() {
   return (
     <div>
-      <h1>
+      <h1 data-testid="App.DataTestId">
         PLATFORM=
         {__PLATFORM__}
       </h1>
@@ -21,8 +21,8 @@ export function App() {
       </div>
       <Svg width={100} height={100} fill="yellow" />
       <Svg width={100} height={100} fill="orange" />
-      {/* По идее должен работать :( 
-          upd: скорее всего из за svg -- не задан напрямую fill stroke*/}
+      {/* По идее должен работать :(
+          upd: скорее всего из за svg -- не задан напрямую fill stroke */}
       {/* <Svg width={100} height={100} color="blue" /> */}
       <div>Мой сайтик</div>
       <Link to="/about">about</Link>

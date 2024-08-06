@@ -2,11 +2,11 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { Configuration, DefinePlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { BuildOptions } from './types/types';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshTypeScript from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
+import { BuildOptions } from './types/types';
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
   const {
@@ -34,7 +34,7 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     plugins.push(
       new CopyPlugin({
         patterns: [
-          {from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales')},
+          { from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales') },
         ],
       }),
     );
@@ -47,7 +47,7 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     );
     plugins.push(
       // позволяет подгружать изменения без перезагрузки -- Hot module replacement (hmr)
-      new ReactRefreshTypeScript()
+      new ReactRefreshTypeScript(),
     );
   }
 
